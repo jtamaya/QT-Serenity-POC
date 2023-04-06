@@ -118,19 +118,19 @@ A more imperative-style implementation using the Action Classes pattern can be f
     }
 ```
 
-These classes are declared using the Serenity `@Steps` annotation, shown below:
+These classes are declared using the Serenity `@StepDefinitions` annotation, shown below:
 ```java
-    @Steps
+    @StepDefinitions
     NavigateTo navigateTo;
 
-    @Steps
+    @StepDefinitions
     SearchFor searchFor;
 
-    @Steps
+    @StepDefinitions
     SearchResult searchResult;
 ```
 
-The `@Steps`annotation tells Serenity to create a new instance of the class, and inject any other steps or page objects that this instance might need.
+The `@StepDefinitions`annotation tells Serenity to create a new instance of the class, and inject any other steps or page objects that this instance might need.
 
 Each action class models a particular facet of user behaviour: navigating to a particular page, performing a search, or retrieving the results of a search. These classes are designed to be small and self-contained, which makes them more stable and easier to maintain.
 
