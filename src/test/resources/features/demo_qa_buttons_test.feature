@@ -1,4 +1,4 @@
-Feature: Test Button Click
+Feature: Demo QA buttons test
   Scenario: A user wants to click button on DemoQA
     Given A navigates to the buttons page
     When user click on the double click button

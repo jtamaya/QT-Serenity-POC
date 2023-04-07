@@ -10,6 +10,4 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/demo_qa_buttons_test.feature",
         publish = true
 )
-public class TestSuite {
-
-}
+public class TestSuite {}

@@ -1,9 +1,18 @@
 package UIPages;
 
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
+@DefaultUrl("https://demoqa.com/")
 public class DemoQAButtonsTest extends PageObject {
 
+    public boolean isElementCardVisible(){
+        return $("//*[@id=\"app\"]/div/div/div[2]/div/div[1]").isVisible();
+    }
+
+    public String getElementCardText(){
+        return $("//*[@id=\"app\"]/div/div/div[2]/div/div[1]").getText();
+    }
     public void clickElementsCard(){
         $("//*[@id=\"app\"]/div/div/div[2]/div/div[1]").click();
     }

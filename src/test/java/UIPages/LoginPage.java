@@ -4,7 +4,6 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
 
-@DefaultUrl("https://www.browserstack.com/users/sign_in")
 public class LoginPage extends PageObject {
     public void doLogin(){
         $("#user_email_login").sendKeys("jonathan.amaya@softwareone.com");

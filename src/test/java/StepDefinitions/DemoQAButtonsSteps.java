@@ -9,10 +9,13 @@ import org.junit.Assert;
 
 public class DemoQAButtonsSteps {
 
-    private DemoQAButtonsTest demoQAButtonsTest;
+    private DemoQAButtonsTest demoQAButtonsTest = new DemoQAButtonsTest();
 
     @Given("A navigates to the buttons page")
     public void navigateToButtonPage(){
+        Assert.assertTrue(demoQAButtonsTest.isElementCardVisible());
+        System.out.println(demoQAButtonsTest.isElementCardVisible());
+        System.out.println(demoQAButtonsTest.getElementCardText());
         demoQAButtonsTest.clickElementsCard();
         demoQAButtonsTest.clickButtonsSideBarItem();
     }
