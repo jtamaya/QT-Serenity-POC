@@ -27,7 +27,7 @@ public class DemoQAButtonsSteps {
         demoQAButtonsTest.singleClickButton();
     }
 
-    @Then("user should see {doubleClickMessage} and {singleClickMessage}")
+    @Then("user should see \"You have done a double click\" and \"You have done a dynamic click\"")
     public void labelsDoAppear(){
         Assert.assertTrue(demoQAButtonsTest.doubleClickButton());
         Assert.assertTrue(demoQAButtonsTest.singleClickButton());
