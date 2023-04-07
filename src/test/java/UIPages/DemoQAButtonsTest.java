@@ -12,13 +12,19 @@ public class DemoQAButtonsTest extends PageObject {
         $("//*[@id=\"item-4\"]").click();
     }
 
-    public boolean doubleClickButton() {
+    public void doubleClickButton() {
         $("//*[@id=\"doubleClickBtn\"]").doubleClick();
-        return $("//*[@id=\"doubleClickMessage\"]").isVisible();
     }
 
-    public boolean singleClickButton() {
+    public void singleClickButton() {
         $("//*[@id=\"UpTWx\"]").click();
-        return $("//*[@id=\"dynamicClickMessage\"]").isVisible();
+    }
+
+    public String getSingleClickButtonSuccessLabel(){
+        return $("//*[@id=\"dynamicClickMessage\"]").getText();
+    }
+
+    public String getDoubleClickButtonSuccessLabel(){
+        return $("//*[@id=\"doubleClickMessage\"]").getText();
     }
 }

@@ -10,8 +10,6 @@ import org.junit.Assert;
 public class DemoQAButtonsSteps {
 
     private DemoQAButtonsTest demoQAButtonsTest;
-    public boolean singleLabel;
-    public boolean doubleLabel;
 
     @Given("A navigates to the buttons page")
     public void navigateToButtonPage(){
@@ -21,20 +19,20 @@ public class DemoQAButtonsSteps {
 
     @When("user click on the double click button")
     public void doubleClickButton(){
-        doubleLabel = demoQAButtonsTest.doubleClickButton();
+        demoQAButtonsTest.doubleClickButton();
     }
 
     @And("user click on the single click button")
     public void singleClickButton(){
-        singleLabel = demoQAButtonsTest.singleClickButton();
+        demoQAButtonsTest.singleClickButton();
     }
 
-    @Then("user should see \"You have done a double click\" and \"You have done a dynamic click\"")
-    public void labelsDoAppear(){
-        System.out.println(doubleLabel);
-        System.out.println(singleLabel);
-        Assert.assertTrue(doubleLabel);
-        Assert.assertTrue(singleLabel);
+    @Then("user should see {string} and {string}")
+    public void labelsDoAppear(String doubleLabelText, String singleLabelText){
+
+        Assert.assertTrue(demoQAButtonsTest.getDoubleClickButtonSuccessLabel().equals(doubleLabelText));
+        Assert.assertTrue(demoQAButtonsTest.getSingleClickButtonSuccessLabel().equals(singleLabelText));
+
     }
 
 }
