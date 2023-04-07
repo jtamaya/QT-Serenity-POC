@@ -13,18 +13,27 @@ public class DemoQAButtonsTest extends PageObject {
     }
 
     public void doubleClickButton() {
-        $("//*[@id=\"doubleClickBtn\"]").doubleClick();
+        $("#doubleClickBtn").doubleClick();
     }
 
     public void singleClickButton() {
-        $("//*[@id=\"UpTWx\"]").click();
+        $("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button").click();
     }
 
-    public String getSingleClickButtonSuccessLabel(){
-        return $("//*[@id=\"dynamicClickMessage\"]").getText();
+    public String getSingleClickButtonSuccessLabel() {
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return $("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/p").waitUntilPresent().getAttribute("innerText");
     }
 
     public String getDoubleClickButtonSuccessLabel(){
-        return $("//*[@id=\"doubleClickMessage\"]").getText();
+        return $("#doubleClickMessage").waitUntilVisible().getText();
+    }
+
+    public String getSingleClickButtonText(){
+        return $("//*[@id=\"UpTWx\"]").getValue();
     }
 }
